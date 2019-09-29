@@ -1,5 +1,5 @@
 import firebase from 'firebase';
-import 'firebase/firestore';
+// import 'firebase/firestore';
 
 var config = {
   apiKey: process.env.FIREBASE_apiKey,
@@ -13,13 +13,13 @@ var config = {
 class Firebase {
   constructor() {
     firebase.initializeApp(config);
-    this.store = firebase.firestore;
+    // this.store = firebase.firestore;
     this.auth = firebase.auth;
   }
 
-  get dishes() {
+  /**get dishes() {
     return this.store().collection('dishes');
-  }
+  } **/
 }
 
 export default new Firebase();
