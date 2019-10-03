@@ -1,5 +1,8 @@
-import firebase from 'firebase';
-// import 'firebase/firestore';
+import * as firebase from "firebase/app";
+
+// Add the Firebase services that you want to use
+import "firebase/auth";
+import "firebase/firestore";
 
 var config = {
   apiKey: process.env.FIREBASE_apiKey,
@@ -13,7 +16,7 @@ var config = {
 class Firebase {
   constructor() {
     firebase.initializeApp(config);
-    // this.store = firebase.firestore;
+    this.store = firebase.firestore;
     this.auth = firebase.auth;
   }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'props-types';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = {
     uid: '',
@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 }
 
 class Auth extends React.Component {
-    state PropTypes = {
+    static propTypes = {
         children: PropTypes.func.isRequired,
     };
 
@@ -39,7 +39,7 @@ class Auth extends React.Component {
         switch (provider) {
             case 'google':
                 return auth()
-                    .signInWithPopup(new. auth.GoogleAuthProvider())
+                    .signInWithPopup(new auth.GoogleAuthProvider())
                     .cath(error => {
                         console.log(error);
                         // TODO: notify user of the error
@@ -54,7 +54,7 @@ class Auth extends React.Component {
                         return error;
                     })
             default:
-                const reason = "invalid provider passed to signIn method';
+                const reason = "invalid provider passed to signIn method"
                 console.log(reason);
                 return Promise.reject(reason);
         }
@@ -62,6 +62,7 @@ class Auth extends React.Component {
 
     handleSignOut = () => {
         const { auth } = this.context.firebase;
+        console.log('sign out');
         return auth().signOut()
     }
 
