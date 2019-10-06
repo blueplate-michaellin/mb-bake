@@ -2,9 +2,7 @@ import * as firebase from "firebase/app";
 
 // Add the Firebase services that you want to use
 import "firebase/auth";
-import React from 'react';
-
-const FirebaseContext = React.createContext(null);
+import "firebase/firestore";
 
 const config = {
   apiKey: process.env.FIREBASE_apiKey,
@@ -17,11 +15,13 @@ const config = {
 
 class Firebase {
   constructor() {
-    firebase.initializeApp(config)
-    this.auth = firebase.auth()
+    firebase.initializeApp(config);
+    this.auth = firebase.auth();
+    this.uiConfig = {
+      signInFlow: 'popup',
+      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+    }
   }
 }
-
-export { FirebaseContext };
 
 export default Firebase;

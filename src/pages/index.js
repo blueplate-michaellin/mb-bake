@@ -1,24 +1,26 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
-
+import { FirebaseContext } from '../services/index'
+import firebase from 'firebase';
+import { StyledFirebaseAuth } from 'react-firebaseui'; 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 import { TypographyStyle, GoogleFont } from 'react-typography'
 import typography from '../utils/typography'
+import Firebase from "../services/firebase"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1 className="text-center">Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const Firebase = useContext(FirebaseContext)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <StyledFirebaseAuth
+        uiConfig = {Firebase.uiConfig}
+        firebaseAuth={Firebase.auth}
+      />
+    </Layout>
+  )
+}
 
 export default IndexPage
