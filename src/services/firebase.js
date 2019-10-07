@@ -15,11 +15,18 @@ const config = {
 
 class Firebase {
   constructor() {
-    firebase.initializeApp(config);
-    this.auth = firebase.auth();
-    this.uiConfig = {
-      signInFlow: 'popup',
-      signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
+    if (typeof window !== 'undefined') {
+      firebase.initializeApp(config);
+      this.auth = firebase.auth();
+      this.uiConfig = {
+        signInFlow: 'popup',
+        signInOptions: [
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+        ],
+      }
     }
   }
 }
