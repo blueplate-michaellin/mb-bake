@@ -4,6 +4,9 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
+// Add Auth Context
+import { useContext } from "react";
+
 const config = {
   apiKey: process.env.FIREBASE_apiKey,
   authDomain: process.env.FIREBASE_authDomain,
@@ -19,7 +22,10 @@ class Firebase {
       firebase.initializeApp(config);
       this.auth = firebase.auth();
       this.uiConfig = {
+        callbacks: {
+        },
         signInFlow: 'popup',
+        signInSuccessUrl: '/page-2',
         signInOptions: [
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
           firebase.auth.FacebookAuthProvider.PROVIDER_ID,
