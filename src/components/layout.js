@@ -18,6 +18,9 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          facebook
+          instagram
+          linkedin
         }
       }
     }
@@ -25,7 +28,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        facebook={data.site.siteMetadata.facebook}
+        instagram={data.site.siteMetadata.instagram}
+        linkedin={data.site.siteMetadata.linkedin}
+      />
       <div
         style={{
           margin: `0 auto`,
@@ -34,7 +41,7 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <main className="mt-12">{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

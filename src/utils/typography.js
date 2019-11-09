@@ -3,22 +3,24 @@ import Typography from 'typography'
 const typography = new Typography ({
     basedFontSize: "16px",
     basedLineHeight: 1.666,
-    headerFontFamily: ["Nunito", "sans-serif"],
-    bodyFontFamily: ["Nunito", "sans-serif"],
+    headerFontFamily: ["Playfair Display", "serif"],
+    bodyFontFamily: ["Raleway", "sans-serif"],
     googleFonts: [
         {
-            name: 'Nunito',
+            name: 'Playfair Display',
             styles: [
+                '400',
                 '700',
+                '900'
             ],
         },
         {
-            name: 'Nunito',
+            name: 'Raleway',
             styles: [
                 '400',
-                '400i',
+                '400',
                 '700',
-                '700i',
+                '700',
             ]
         }
     ]
