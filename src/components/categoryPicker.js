@@ -24,7 +24,10 @@ class CategoryPicker extends React.Component {
         const catList = this.props.category.map((item, key) =>
             <a 
                 className="pr-8 active:font-semibold cursor-pointer"
-                style={{'fontWeight': this.state.categoryChosen === item ? 'bold':'normal'}} 
+                style={{
+                    'fontWeight': this.state.categoryChosen === item ? 'bold':'normal',
+                    'opacity': this.state.categoryChosen === item ? '1':'0.5'
+                }} 
                 onClick={(e) => this.handleClick(e, item)}
             >
                 {item}
@@ -32,7 +35,7 @@ class CategoryPicker extends React.Component {
         )
 
         return (
-            <div className="container">
+            <div className="z-0 container">
                 <h1>{this.state.categoryChosen}</h1>
                 <div className="mb-6">
                     {catList}

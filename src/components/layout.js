@@ -41,11 +41,8 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main className="mt-12">{children}</main>
+        <main className="mt-12 z-0">{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     </>
