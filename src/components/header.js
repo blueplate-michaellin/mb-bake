@@ -21,7 +21,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
             </div>
           </div>
       {/* Mobile Menu */}
-      <div className="xl:hidden lg:hidden flex items-center justify-between flex-wrap px-3 inset-x-0 top-0 fixed">
+      <div className="xl:hidden lg:hidden flex items-center justify-between flex-wrap px-3 inset-x-0 top-0 fixed z-50">
         <img className="mb-0" src={back} />
         <img className="mb-0" src={logo} />
         <MobileMenu facebook={facebook} linkedin={linkedin} instagram={instagram} />

@@ -35,12 +35,16 @@ class CategoryPicker extends React.Component {
         )
 
         return (
-            <div className="z-0 container">
-                <h1>{this.state.categoryChosen}</h1>
-                <div className="mb-6">
-                    {catList}
+            <div className="flex mx-4 content-center max-w-full">
+                <div className="h-20 overflow-x-visible max-w-full">
+                    <h1 className="lg:text-6xl sm:-mb-4">{this.state.categoryChosen}</h1>
+                    <div className="mb-2 lg:mb-8 md:mb-8 overflow-x-visible lg:mt-4">
+                        {catList}
+                    </div>
+                    <div className="flex -mx-2 overflow-x-auto scrolling-touch">
+                        <ProductList category={this.state.categoryChosen}/>
+                    </div>
                 </div>
-                <ProductList category={this.state.categoryChosen}/>
             </div>
         )
     }

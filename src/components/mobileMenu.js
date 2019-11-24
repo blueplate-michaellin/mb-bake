@@ -39,7 +39,7 @@ class MobileMenu extends React.Component {
                 </div>
                 {
                     this.state.menuOpen ?
-                    <div className="w-screen h-screen fixed z-50 top-0 left-0 bg-white overflow-hidden">
+                    <div className="w-screen h-screen block fixed top-0 left-0 bg-white overflow-hidden">
                         <div className ="absolute top-0 right-0 mx-2">
                             <button className="flex item-center rounded" onClick={this.handleClose}>
                                 {/* TODO: Refactor this to a proper button */}

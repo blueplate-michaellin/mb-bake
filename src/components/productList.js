@@ -3,16 +3,20 @@ import Img from "gatsby-image"
 import { graphql, StaticQuery } from 'gatsby'
 import { Link } from "gatsby"
 
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
 const ProductList = ( {data, category} ) => {
+    
     const products = data.allContentfulProduct.edges
 
     return (
         <>
             {products.map(({node: product, index}) => (
-                <div className="container flex">
+                <div>
                     { category == product.category ?
                         <Link to={`/${product.slug}`}>
-                            <div className="w-64 rounded-lg overflow-hidden shadow hover:shadow-lg border">
+                            <div className="w-64 mx-2 rounded-lg overflow-hidden shadow hover:shadow-lg border">
                                 {!!product.image ?
                                     <div className="w-full">
                                         <Img sizes={product.image.sizes} />
@@ -21,7 +25,7 @@ const ProductList = ( {data, category} ) => {
                                     null
                                 }
                                 <div className="px-6 py-4">
-                                    <h2 className="font-bold text-xl mb-2">{product.name}</h2>
+                                    <h2 className="font-bold text-xl mb-2 truncate">{product.name}</h2>
                                     <p>${product.price}</p>
                                 </div>
                             </div>
@@ -43,7 +47,6 @@ export default props => (
             edges {
                 node {
                 category
-                description
                 name
                 price
                 slug
