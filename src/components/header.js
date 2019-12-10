@@ -1,12 +1,15 @@
 import React from "react";
+import { graphql, StaticQuery } from 'gatsby'
+import { Link }from 'gatsby'
 import MobileMenu from "./mobileMenu"
 import LinkLogo from './linkLogo'
 
 import back from '../icons/back.svg';
 import logo from '../icons/logo.svg';
 
-const Header = ({ facebook, linkedin, instagram }) => {
+const Header = ({ facebook, linkedin, instagram, menuList }) => {
   {/** track last page, to trigger appearance of the back button **/}
+
   return (
     <header>
       {/* Desktop Menu  */}
@@ -15,9 +18,11 @@ const Header = ({ facebook, linkedin, instagram }) => {
              <img className="mb-0" src={logo} height="63px" width="63px" />
             </div>
             <div className="flex w-4/5 flex-auto justify-end">
-              <span className="px-2">about us</span>
-              <span className="px-2">contact</span>
-              <span className="px-2">FAQ</span>
+              {menuList.map(({node: menu, index}) => (
+                <Link to={`/${menu.slug}`}>
+                  <span className="px-2">{menu.pageName}</span>
+                </Link>
+              ))}
             </div>
           </div>
       {/* Mobile Menu */}
@@ -30,5 +35,23 @@ const Header = ({ facebook, linkedin, instagram }) => {
   )
 }
 
-export default Header
+export default () => (
+  <StaticQuery
+      query={graphql`
+          query {
+              allContentfulCompanyInfo {
+                  edges {
+                    node {
+                      pageName
+                      slug
+                    }
+                  }
+              }
+          }       
+      `}
+      render={(data) => (
+          <Header menuList={data.allContentfulCompanyInfo.edges} />
+      )}
+  />
+)
 

@@ -2,30 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import Img from "gatsby-image"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProductCard = ({data, pageContext}) => {
     const {
         name,
         price,
-        image
+        image,
+        details
     } = data.contentfulProduct
-
-    const Bold = ({ children }) => <span className="bold">{children}</span>
-    const Text = ({ children }) => <p className="align-center">{children}</p>
-    
-    const options = {
-      renderMark: {
-        [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-      },
-      renderNode: {
-        [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-        [BLOCKS.LIST_ITEM]: (node, children) => <Text>{children}</Text>
-      },
-    }
-    
-    const output = documentToReactComponents(data.contentfulProduct.description.json, options)
 
     return (
         <Layout>
@@ -36,8 +20,8 @@ const ProductCard = ({data, pageContext}) => {
                     </div>
                     <div className="lg:ml-8 mx-4">
                         <h1>{name}</h1>
+                        <div dangerouslySetInnerHTML={{__html: details.childMarkdownRemark.html}} />
                         <div>${price}</div>
-                        {output}
                     </div>
                 </div>
             </div>
@@ -51,8 +35,10 @@ export const query = graphql`
             category
             name
             price
-            description {
-                json
+            details {
+                childMarkdownRemark {
+                    html
+                }
             }
             image {
                 sizes(maxWidth: 254) {
