@@ -26,6 +26,21 @@ const Layout = ({ children }) => {
     }
   `)
 
+    const messenger = () => {
+        var options = {
+            facebook: "115652463214042", // Facebook page ID
+            whatsapp: "+6598269922", // WhatsApp number
+            call_to_action: "Message us now for any enquries!", // Call to action
+            button_color: "#283F3F", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+            order: "facebook,whatsapp", // Order of buttons
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    };
+
   return (
     <>
       <Header
@@ -38,6 +53,7 @@ const Layout = ({ children }) => {
         <footer>
         </footer>
       </div>
+      {messenger()}
     </>
   )
 }

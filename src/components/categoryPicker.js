@@ -41,7 +41,7 @@ class CategoryPicker extends React.Component {
                     <div className="mb-2 lg:mb-8 md:mb-8 overflow-x-visible lg:mt-4">
                         {catList}
                     </div>
-                    <div className="flex -mx-2 overflow-x-auto scrolling-touch">
+                    <div className="flex -mx-2 pb-4 overflow-x-auto scrolling-touch">
                         <ProductList category={this.state.categoryChosen}/>
                     </div>
                 </div>
