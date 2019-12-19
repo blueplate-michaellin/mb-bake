@@ -13,9 +13,11 @@ const Header = ({ facebook, linkedin, instagram, menuList }) => {
   return (
     <header>
       {/* Desktop Menu  */}
-        <div className="hidden lg:flex xl:flex px-3 inset-x-0 top-0 items-center fixed">
+        <div className="hidden lg:flex xl:flex px-3 inset-x-0 top-0 items-center fixed z-50 bg-white">
             <div className="w-1/5">
-             <img className="mb-0" src={logo} height="63px" width="63px" />
+              <Link to = {`/`}>
+                <img className="mb-0" src={logo} height="63px" width="63px" />
+              </Link>
             </div>
             <div className="flex w-4/5 flex-auto justify-end">
               {menuList.map(({node: menu, index}) => (
@@ -26,10 +28,14 @@ const Header = ({ facebook, linkedin, instagram, menuList }) => {
             </div>
           </div>
       {/* Mobile Menu */}
-      <div className="xl:hidden lg:hidden flex items-center justify-between flex-wrap px-3 inset-x-0 top-0 fixed z-50">
-        <img className="mb-0" src={back} />
-        <img className="mb-0" src={logo} />
-        <MobileMenu facebook={facebook} linkedin={linkedin} instagram={instagram} />
+      <div className="xl:hidden lg:hidden flex items-center justify-between flex-wrap px-3 inset-x-0 top-0 fixed z-50 bg-white">
+        <div className="hidden"><img className="mb-0" src={back} /></div>
+        <Link to={`/`}>
+          <div className="flex justify-center items-center">
+          <img className="mb-0" src={logo} />
+          </div>
+        </Link>
+        <MobileMenu facebook={facebook} linkedin={linkedin} instagram={instagram} menuList={menuList} />
       </div>
     </header>
   )

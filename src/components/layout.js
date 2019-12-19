@@ -33,8 +33,8 @@ const Layout = ({ children }) => {
         instagram={data.site.siteMetadata.instagram}
         linkedin={data.site.siteMetadata.linkedin}
       />
-      <div className="my-auto lg:px-4">
-        <main className="mt-12 lg:mt-24 max-w-full overflow-x-visible">{children}</main>
+      <div className="container mx-auto">
+        <main className="mt-12 lg:mt-24 overflow-x-visible">{children}</main>
         <footer>
         </footer>
       </div>

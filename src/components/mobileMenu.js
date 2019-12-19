@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link }from 'gatsby'
 import LinkFacebook from "./linkFacebook"
 import LinkLinkedIn from "./linkLinkedIn"
 import LinkIG from "./linkIG"
@@ -48,17 +49,22 @@ class MobileMenu extends React.Component {
                         </div>
                         <div className="container m-auto">
                             <div className = "flex justify-center items-center">
+                                <Link to = {`/`}>
                                     <img src={logo} />
+                                </Link>
                             </div>
                             <div className="container m-auto py-8">
-                                    {/* TODO: Refactor this list and add Link tag */}
-                                    <a className="flex justify-center -px-4"><h1>About us</h1></a>
-                                    <a className="flex justify-center -px-4"><h1>Contact</h1></a>
-                                    <a className="flex justify-center -px-4"><h1>FAQ</h1></a>
+                                {
+                                    this.props.menuList.map(({node: menu, index}) => (
+                                        <Link to ={`/${menu.slug}`}>
+                                            <div className="flex justify-center -px-4"><h1>{menu.pageName}</h1></div>
+                                        </Link>
+                                    ))
+                                }
                             </div>
                             <div className = "container">
                                 <p className="text-center">follow us on:</p>
-                                <div className = "mx-auto flex justify-between items-center w-24 mt-6 pr-4">
+                                <div className = "mx-auto flex justify-between items-center w-24 mt-6">
                                     <LinkFacebook link={this.props.facebook} size={"20"}/>
                                     <LinkIG link={this.props.instagram} size={"20"}/>
                                     <LinkLinkedIn link={this.props.linkedin} size={"20"}/>

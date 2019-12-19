@@ -10,8 +10,10 @@ const CompanyInfo = ({data}) => {
 
     return (
         <Layout>
-            <h1>{name}</h1>
-            <div dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}} />
+            <div className = "text-center">
+                <h1>{name}</h1>
+                <div className = "markdown" dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}} />
+            </div>
         </Layout>
     )
 

@@ -25,7 +25,7 @@ const ProductList = ( {data, category} ) => {
                                     null
                                 }
                                 <div className="px-6 py-4">
-                                    <h2 className="font-bold text-xl mb-2 truncate">{product.name}</h2>
+                                    <h2 className="font-bold text-xl mb-2 pb-0 truncate">{product.name}</h2>
                                     <p>${product.price}</p>
                                 </div>
                             </div>
