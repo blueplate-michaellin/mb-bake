@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Link }from 'gatsby'
 import LinkFacebook from "./linkFacebook"
 import LinkLinkedIn from "./linkLinkedIn"
@@ -7,7 +7,23 @@ import LinkIG from "./linkIG"
 
 import logo from '../icons/logo.svg';
 
-const Footer = ({ facebook, linkedin, instagram, menuList }) => {
+const Footer = ({ facebook, linkedin, instagram }) => {
+
+    const data = useStaticQuery(graphql`
+        query {
+        allContentfulCompanyInfo {
+            edges {
+                node {
+                pageName
+                slug
+                }
+            }
+        }
+        }  
+    `)
+
+    const menuList = data.allContentfulCompanyInfo.edges
+
   return (
     <footer>
         <div className="hidden md:block lg:block xl:block px-3 inset-x-0 z-50 bg-mb-green">
@@ -39,23 +55,5 @@ const Footer = ({ facebook, linkedin, instagram, menuList }) => {
   )
 }
 
-export default () => (
-  <StaticQuery
-      query={graphql`
-          query {
-              allContentfulCompanyInfo {
-                  edges {
-                    node {
-                      pageName
-                      slug
-                    }
-                  }
-              }
-          }       
-      `}
-      render={(data) => (
-          <Footer menuList={data.allContentfulCompanyInfo.edges} />
-      )}
-  />
-)
+export default Footer
 

@@ -46,11 +46,11 @@ const Layout = ({ children }) => {
     <>
       <Header
         facebook={data.site.siteMetadata.facebook}
-        instagram={data.site.siteMetadata.instagram}
         linkedin={data.site.siteMetadata.linkedin}
+        instagram={data.site.siteMetadata.instagram}
       />
-      <div className="container mx-auto">
-        <main className="mt-12 lg:my-24 overflow-x-visible block">{children}</main>
+      <div className="container mx-auto min-h-screen">
+        <main className="pt-12 lg:py-24 overflow-x-visible block">{children}</main>
       </div>
       <Footer 
           facebook={data.site.siteMetadata.facebook}

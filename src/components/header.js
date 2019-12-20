@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { Link }from 'gatsby'
 import MobileMenu from "./mobileMenu"
 import LinkLogo from './linkLogo'
@@ -7,8 +7,23 @@ import LinkLogo from './linkLogo'
 import back from '../icons/back.svg';
 import logo from '../icons/logo.svg';
 
-const Header = ({ facebook, linkedin, instagram, menuList }) => {
+const Header = ({ facebook, linkedin, instagram }) => {
   {/** track last page, to trigger appearance of the back button **/}
+
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulCompanyInfo {
+          edges {
+            node {
+              pageName
+              slug
+            }
+          }
+      }
+    }  
+  `)
+
+  const menuList = data.allContentfulCompanyInfo.edges
 
   return (
     <header>
@@ -41,23 +56,5 @@ const Header = ({ facebook, linkedin, instagram, menuList }) => {
   )
 }
 
-export default () => (
-  <StaticQuery
-      query={graphql`
-          query {
-              allContentfulCompanyInfo {
-                  edges {
-                    node {
-                      pageName
-                      slug
-                    }
-                  }
-              }
-          }       
-      `}
-      render={(data) => (
-          <Header menuList={data.allContentfulCompanyInfo.edges} />
-      )}
-  />
-)
+export default Header
 
