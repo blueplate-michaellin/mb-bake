@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -49,10 +50,13 @@ const Layout = ({ children }) => {
         linkedin={data.site.siteMetadata.linkedin}
       />
       <div className="container mx-auto">
-        <main className="mt-12 lg:mt-24 overflow-x-visible">{children}</main>
-        <footer>
-        </footer>
+        <main className="mt-12 lg:my-24 overflow-x-visible block">{children}</main>
       </div>
+      <Footer 
+          facebook={data.site.siteMetadata.facebook}
+          instagram={data.site.siteMetadata.instagram}
+          linkedin={data.site.siteMetadata.linkedin}
+        />
       {messenger()}
     </>
   )

@@ -35,7 +35,7 @@ class CategoryPicker extends React.Component {
         )
 
         return (
-            <div className="flex mx-4 content-center max-w-full">
+            <div className="mx-4 content-center max-w-full min-h-screen">
                 <div className="h-20 overflow-x-visible max-w-full">
                     <h1 className="lg:text-6xl sm:-mb-4">{this.state.categoryChosen}</h1>
                     <div className="mb-2 lg:mb-8 md:mb-8 overflow-x-visible lg:mt-4">
