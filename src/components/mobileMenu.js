@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link }from 'gatsby'
 import LinkFacebook from "./linkFacebook"
-import LinkLinkedIn from "./linkLinkedIn"
 import LinkIG from "./linkIG"
 import menu from '../icons/menu.svg'
 import logo from '../icons/logo.svg'
@@ -67,7 +66,6 @@ class MobileMenu extends React.Component {
                                 <div className = "mx-auto flex justify-between items-center w-24 mt-6">
                                     <LinkFacebook link={this.props.facebook} size={"20"}/>
                                     <LinkIG link={this.props.instagram} size={"20"}/>
-                                    <LinkLinkedIn link={this.props.linkedin} size={"20"}/>
                                 </div>
                             </div>
                         </div>

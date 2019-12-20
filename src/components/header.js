@@ -50,7 +50,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
           <img className="mb-0" src={logo} />
           </div>
         </Link>
-        <MobileMenu facebook={facebook} linkedin={linkedin} instagram={instagram} menuList={menuList} />
+        <MobileMenu facebook={facebook} instagram={instagram} menuList={menuList} />
       </div>
     </header>
   )
