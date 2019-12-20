@@ -10,7 +10,7 @@ import logo from '../icons/logo.svg';
 const Footer = ({ facebook, linkedin, instagram, menuList }) => {
   return (
     <footer>
-        <div className="px-3 inset-x-0 z-50 bg-mb-green">
+        <div className="hidden md:block lg:block xl:block px-3 inset-x-0 z-50 bg-mb-green">
             <div className="container mx-auto top flex flex-col justify-center py-12">
                 <div>
                     <Link to = {`/`}>
