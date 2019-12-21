@@ -7,7 +7,7 @@ class CategoryPicker extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          categoryChosen: "Bread",
+          categoryChosen: this.props.category[0],
         }
         this.handleClick = this.handleClick.bind(this)
     }
