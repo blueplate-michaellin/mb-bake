@@ -15,7 +15,7 @@ const CompanyInfo = ({data}) => {
                 <span className="opacity-50"><Link to={`/`}>Main</Link></span><span className="mx-4 opacity-50">></span><span className="font-bold">{pageName}</span>
             </div>
             <div className = "text-center">
-                <h1>{name}</h1>
+                <h1>{pageName}</h1>
                 <div className = "markdown" dangerouslySetInnerHTML={{__html: content.childMarkdownRemark.html}} />
             </div>
         </Layout>
