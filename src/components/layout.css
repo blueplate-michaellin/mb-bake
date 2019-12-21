@@ -25,6 +25,11 @@ p {
   @apply pb-4
 }
 
-
 @tailwind components;
 @tailwind utilities;
+
+.markdown img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

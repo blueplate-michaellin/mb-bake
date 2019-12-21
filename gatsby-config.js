@@ -4,9 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `MB Bake`,
+    description: `Home bakery specialized in Cup Cakes, Customized Birthday Cakes and Sourdough Breads`,
+    author: `Bridgette Foo`,
+    facebook: `https://www.facebook.com/MB-Bakery-115652463214042/`,
+    instagram: `https://www.instagram.com/m.b.bake/`,
+    linkedin: `https://www.linkedin.com/company/the-new-luncher/`,
   },
 
   plugins: [
@@ -26,10 +29,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#171717`,
+        theme_color: `#171717`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/icons/logo.svg`,
       },
     },
     'gatsby-plugin-tailwindcss',
@@ -47,5 +50,9 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-transformer-remark`
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ]
 }
