@@ -30,7 +30,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
       {/* Desktop Menu  */}
         <div className="hidden lg:flex xl:flex px-3 inset-x-0 top-0 items-center fixed z-50 bg-white">
             <div className="w-1/5">
-              <Link to = {`/`}>
+              <Link to = {`/`} >
                 <img className="mb-0" src={logo} height="63px" width="63px" />
               </Link>
             </div>

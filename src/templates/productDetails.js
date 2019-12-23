@@ -9,14 +9,18 @@ const ProductCard = ({data, pageContext}) => {
         name,
         price,
         image,
-        details
+        details,
+        category
     } = data.contentfulProduct
+    
+    const text = "Hi! I am interested in " + name;
 
     return (
         <Layout>
-            <div className="container my-8 lg:-mt-4">
+            <div className="container mb-8 md:my-8 lg:my-8 xl:my-8 lg:-mt-4">
                 <div className="ml-4 mb-4 md:ml-0 lg:ml-0 xl:ml-0">
-                    <span className="opacity-50"><Link to={`/`}>Main</Link></span><span className="mx-4 opacity-50">></span><span className="font-bold">{name}</span>
+                    <span className="opacity-50">
+                        <Link to={`/`} state={{ category: category }}>Main</Link></span><span className="mx-4 opacity-50">></span><span className="font-bold">{name}</span>
                 </div>
                 <div className = "lg:flex">
                     <div className="w-full mb-8 lg:w-1/2">
@@ -27,7 +31,7 @@ const ProductCard = ({data, pageContext}) => {
                         <div dangerouslySetInnerHTML={{__html: details.childMarkdownRemark.html}} />
                         <div>${price}</div>
                         <div className="mt-8">
-                            <a href="https://api.whatsapp.com/send?phone=6598269922&text=&source=&data=#" target="_blank">
+                            <a href={"https://api.whatsapp.com/send?phone=6598269922&text=" + text } target="_blank">
                                 <button className="rounded-full bg-mb-green opacity-75 hover:shadow-lg hover:opacity-100 p-4 flex">
                                     <span className="pr-2">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
