@@ -5,8 +5,8 @@ import SEO from "../components/seo"
 import CategoryPicker from "../components/categoryPicker"
 
 export default ({location, data}) => {
-  if (location.state !== null && location) {
-    if (typeof location.state.category !== 'undefined') {
+  if (location.state !== null) {
+    if (typeof location.state.category !== 'undefined' || typeof location.state !== 'undefined') {
     console.log('@precat has something', location.state.category[0])
     return (
       <Layout>
