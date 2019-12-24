@@ -17,7 +17,7 @@ const ProductCard = ({data, pageContext}) => {
 
     return (
         <Layout>
-            <div className="container mb-8 md:my-8 lg:my-8 xl:my-8 lg:-mt-4">
+            <div className="container mb-8 lg:-mt-4">
                 <div className="ml-4 mb-4 md:ml-0 lg:ml-0 xl:ml-0">
                     <span className="opacity-50">
                         <Link to={`/`} state={{ category: category }}>Main</Link></span><span className="mx-4 opacity-50">></span><span className="font-bold">{name}</span>
