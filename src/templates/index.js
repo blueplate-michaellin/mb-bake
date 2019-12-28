@@ -1,23 +1,16 @@
 import React from "react"
-import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CategoryPicker from "../components/categoryPicker"
+import { useCategory } from "../utils/category"
 
-export default ({location, data}) => {
 
+export default ({location}) => {
+  const category = useCategory()
   return (
     <Layout>
       <SEO title="Home" />
-          <CategoryPicker category={data.allContentfulProduct.distinct}/>
+      <CategoryPicker category={category}/>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    allContentfulProduct {
-        distinct(field: category)
-    }
-  }    
-`
