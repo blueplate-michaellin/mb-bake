@@ -8,18 +8,8 @@ class CategoryPicker extends React.Component {
         super(props);
         this.state = {
           categoryChosen: this.props.category[0],
-          prevCategory: this.props.prevCat
         }
         this.handleClick = this.handleClick.bind(this)
-    }
-
-    componentWillMount() {
-        console.log('prevCat', this.state.prevCategory)
-        if (typeof this.state.prevCategory !== 'undefined') {
-            this.setState({
-                categoryChosen: this.state.prevCategory
-            })
-        }
     }
 
     handleClick = (e, item) => {
