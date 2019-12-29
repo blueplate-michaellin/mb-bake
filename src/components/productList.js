@@ -1,4 +1,5 @@
-import React from 'react'
+import React , { useContext } from "react"
+import { store } from '../utils/store.js';
 import Img from "gatsby-image"
 import { graphql, StaticQuery } from 'gatsby'
 import { Link } from "gatsby"
@@ -7,7 +8,6 @@ import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const ProductList = ( {data, category} ) => {
-    
     const products = data.allContentfulProduct.edges
 
     return (
