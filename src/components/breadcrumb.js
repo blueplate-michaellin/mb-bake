@@ -12,7 +12,7 @@ const Breadcrumb = (props) => {
         navigate('/')
     }
     return(
-        <span className="opacity-50">
+        <span>
             <a onClick={(e)=>handleClick()}>Main</a><span className="mx-4 opacity-50">></span><span className="font-bold">{props.name}</span>
         </span>
     )
