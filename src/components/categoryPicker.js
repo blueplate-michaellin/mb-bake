@@ -11,7 +11,7 @@ const CategoryPicker = (props) => {
     })
 
     const catList = props.category.map((item, key) =>
-        <a 
+        <a key = {item}
             className="pr-8 active:font-semibold cursor-pointer"
             style={{
                 'fontWeight': globalState.state === item ? 'bold':'normal',

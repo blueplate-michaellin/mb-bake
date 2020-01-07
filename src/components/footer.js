@@ -35,9 +35,11 @@ const Footer = ({ facebook, linkedin, instagram }) => {
                 </div>
                 <div className="flex justify-center items-center w-full mb-6">
                     {menuList.map(({node: menu, index}) => (
-                        <Link to={`/${menu.slug}`}>
-                        <span className="mr-2">{menu.pageName}</span>
-                        </Link>
+                        <div key={menu.slug}>
+                            <Link to={`/${menu.slug}`}>
+                                <span className="mr-2">{menu.pageName}</span>
+                            </Link>
+                        </div>
                     ))}
                 </div>
                 <div>
