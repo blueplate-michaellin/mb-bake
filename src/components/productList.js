@@ -13,7 +13,7 @@ const ProductList = ( {data, category} ) => {
     return (
         <>
             {products.map(({node: product, index}) => (
-                <div>
+                <div key={product.id}>
                     { category == product.category ?
                         <Link to={`/${product.slug}`}>
                             <div className="w-64 mx-2 rounded-lg overflow-hidden shadow hover:shadow-lg border">
@@ -46,6 +46,7 @@ export default props => (
             allContentfulProduct {
             edges {
                 node {
+                id
                 category
                 name
                 price
