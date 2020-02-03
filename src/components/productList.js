@@ -16,7 +16,7 @@ const ProductList = ( {data, category} ) => {
                 <div key={product.id}>
                     { category == product.category ?
                         <Link to={`/${product.slug}`}>
-                            <div className="w-64 mx-2 rounded-lg overflow-hidden shadow hover:shadow-lg border">
+                            <div className="w-64 lg:w-56 xl:w-56 mx-2 my-2 rounded-lg overflow-hidden shadow hover:shadow-lg border" style={{height: 350}}>
                                 {!!product.image ?
                                     <div className="w-full">
                                         <Img sizes={product.image.sizes} />
