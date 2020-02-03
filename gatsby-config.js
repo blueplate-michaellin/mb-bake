@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `MB Bake`,
-    description: `Home bakery specialized in Cup Cakes, Customized Birthday Cakes and Sourdough Breads`,
+    description: `Home bakery specialized in Customized Birthday Cakes, Baked goods and Sourdough Breads`,
     author: `Bridgette Foo`,
     facebook: `https://www.facebook.com/MB-Bakery-115652463214042/`,
     instagram: `https://www.instagram.com/m.b.bake/`,
