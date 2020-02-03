@@ -26,11 +26,11 @@ const CategoryPicker = (props) => {
     return (
         <div className="mx-4 content-center max-w-full">
             <div className="overflow-x-visible max-w-full">
-                <h1 className="lg:text-6xl sm:-mb-4">{globalState.state}</h1>
+                <h2 className="lg:text-6xl sm:-mb-4">{globalState.state}</h2>
                 <div className="mb-2 lg:mb-8 md:mb-8 overflow-x-visible lg:mt-4">
                     {catList}
                 </div>
-                <div className="flex -mx-2 pb-4 overflow-x-auto scrolling-touch">
+                <div className="flex -mx-2 pb-4 overflow-x-auto scrolling-touch lg:flex-wrap xl:flex-wrap">
                     <ProductList category={globalState.state}/>
                 </div>
             </div>
