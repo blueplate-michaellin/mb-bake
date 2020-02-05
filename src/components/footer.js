@@ -27,12 +27,12 @@ const Footer = ({ facebook, linkedin, instagram }) => {
     <footer>
         <div className="hidden md:block lg:block xl:block px-3 inset-x-0 z-50 bg-mb-green">
             <div className="container mx-auto top flex flex-col justify-center py-12">
-                <div>
+                {/**<div>
                     <Link to = {`/`}>
                         <img className="mb-0 mx-auto" src={logo} height="63px" width="63px" />
                     </Link>
                     <h5 className="text-center mb-6">MB Bake</h5>
-                </div>
+                </div> **/}
                 <div className="flex justify-center items-center w-full mb-6">
                     {menuList.map(({node: menu, index}) => (
                         <div key={menu.slug}>
