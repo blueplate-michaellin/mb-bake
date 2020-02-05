@@ -5,7 +5,7 @@ import MobileMenu from "./mobileMenu"
 import LinkLogo from './linkLogo'
 
 import back from '../icons/back.svg';
-import logo from '../icons/logo.svg';
+import logo from '../images/full logo.png';
 
 const Header = ({ facebook, linkedin, instagram }) => {
   {/** track last page, to trigger appearance of the back button **/}
@@ -28,7 +28,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
   return (
     <header>
       {/* Desktop Menu  */}
-        <div className="hidden lg:flex xl:flex px-3 inset-x-0 top-0 items-center fixed z-50 bg-white">
+        <div className="hidden lg:flex xl:flex px-3 inset-x-0 top-0 items-center fixed z-50 bg-white shadow-md">
             <div className="w-1/5">
               <Link to = {`/`}>
                 <img className="mb-0" src={logo} height="63px" width="63px" />
@@ -38,7 +38,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
               {menuList.map(({node: menu, index}) => (
                 <div key={menu.slug}>
                   <Link to={`/${menu.slug}`}>
-                    <span className="px-2">{menu.pageName}</span>
+                    <span className="px-2 opacity-50">{menu.pageName}</span>
                   </Link>
                 </div>
               ))}
@@ -49,7 +49,7 @@ const Header = ({ facebook, linkedin, instagram }) => {
         <div className="hidden"><img className="mb-0" src={back} /></div>
         <Link to={`/`}>
           <div className="flex justify-center items-center">
-          <img className="mb-0" src={logo} />
+          <img className="mb-0" src={logo} height="50px" width="50px" />
           </div>
         </Link>
         <MobileMenu facebook={facebook} instagram={instagram} menuList={menuList} />

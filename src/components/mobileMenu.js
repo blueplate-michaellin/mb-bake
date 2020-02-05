@@ -3,7 +3,7 @@ import { Link }from 'gatsby'
 import LinkFacebook from "./linkFacebook"
 import LinkIG from "./linkIG"
 import menu from '../icons/menu.svg'
-import logo from '../icons/logo.svg'
+import logo from '../images/full logo.png'
 import close from '../icons/close.svg'
 
 class MobileMenu extends React.Component {
@@ -49,7 +49,7 @@ class MobileMenu extends React.Component {
                         <div className="container m-auto">
                             <div className = "flex justify-center items-center">
                                 <Link to = {`/`}>
-                                    <img src={logo} />
+                                    <img src={logo} height="63px" width="63px" />
                                 </Link>
                             </div>
                             <div className="container m-auto py-8">
