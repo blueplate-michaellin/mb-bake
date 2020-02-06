@@ -10,6 +10,7 @@ module.exports = {
     facebook: `https://www.facebook.com/MB-Bakery-115652463214042/`,
     instagram: `https://www.instagram.com/m.b.bake/`,
     linkedin: `https://www.linkedin.com/company/the-new-luncher/`,
+    siteUrl: 'https://www.microbakery.co'
   },
 
   plugins: [
@@ -33,6 +34,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
