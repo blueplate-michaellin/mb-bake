@@ -9,7 +9,6 @@ module.exports = {
     author: `Bridgette Foo`,
     facebook: `https://www.facebook.com/MB-Bakery-115652463214042/`,
     instagram: `https://www.instagram.com/m.b.bake/`,
-    linkedin: `https://www.linkedin.com/company/the-new-luncher/`,
     siteUrl: 'https://www.microbakery.co'
   },
 
