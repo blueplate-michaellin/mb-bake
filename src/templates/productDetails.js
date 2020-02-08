@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import { navigate } from "gatsby"
+import SEO from "../components/SEO"
 import Layout from "../components/layout"
 import Breadcrumb from "../components/breadcrumb"
 import Img from "gatsby-image"
@@ -19,6 +20,7 @@ const ProductCard = ({data}) => {
 
     return (
         <Layout>
+            <SEO title = {name} image = {image.file.url}/>
             <div className="container mb-8 lg:-mt-4">
                 <div className="ml-4 mb-4 md:ml-0 lg:ml-0 xl:ml-0">
                     <Breadcrumb category={category} name={name}/>
@@ -74,6 +76,9 @@ export const query = graphql`
             image {
                 sizes(maxWidth: 512) {
                     ...GatsbyContentfulSizes
+                }
+                file {
+                    url
                 }
             }
         }

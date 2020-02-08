@@ -21,7 +21,6 @@ const Layout = ({ children }) => {
           title
           facebook
           instagram
-          linkedin
         }
       }
     }
@@ -48,7 +47,6 @@ const Layout = ({ children }) => {
     <>
       <Header
         facebook={data.site.siteMetadata.facebook}
-        linkedin={data.site.siteMetadata.linkedin}
         instagram={data.site.siteMetadata.instagram}
       />
       <div className="container mx-auto min-h-screen">
@@ -57,7 +55,6 @@ const Layout = ({ children }) => {
       <Footer 
           facebook={data.site.siteMetadata.facebook}
           instagram={data.site.siteMetadata.instagram}
-          linkedin={data.site.siteMetadata.linkedin}
         />
       {messenger()}
     </>
