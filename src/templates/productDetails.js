@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import { navigate } from "gatsby"
-import SEO from "../components/SEO"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import Breadcrumb from "../components/breadcrumb"
 import Img from "gatsby-image"
