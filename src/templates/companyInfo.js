@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Link }from 'gatsby'
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const CompanyInfo = ({data}) => {
     const {
